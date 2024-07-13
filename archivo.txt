@@ -1,0 +1,3 @@
+Holaaa, como estas!!
+Haz logrado abrir un archivo de textos,
+vas por buen camino.
