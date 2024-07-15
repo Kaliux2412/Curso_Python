@@ -94,24 +94,24 @@ def recibo():
     fecha_recibo = f'{fecha.day}/{fecha.month}/{fecha.year} - {fecha.hour}:{fecha.minute}'
     texto_recibo.insert(END, f'Datos:\t{num_recibo}\t\t{fecha_recibo}')
     texto_recibo.insert(END,f'*'*47 + '\n')
-    texto_recibo.insert(END,'Items\t\tCant.\tCosto Productos')
+    texto_recibo.insert(END,'Items\t\tCant.\tCosto Productos\n')
     texto_recibo.insert(END,f'-'*54 + '\n')
 
     x = 0
     for comida in texto_comida:
-        if comida.get() != 0:
+        if comida.get() != '0':
             texto_recibo.insert(END, f'{lista_comida[x]}\t\t{comida.get()}\t'
                                      f'$ {int(comida.get())* precios_comida[x]}\n')
         x += 1
     x = 0
     for bebida in texto_bebida:
-        if bebida.get() != 0:
+        if bebida.get() != '0':
             texto_recibo.insert(END, f'{lista_bebidas[x]}\t\t{bebida.get()}\t'
                                      f'$ {int(bebida.get())* precios_bebidas[x]}\n')
         x += 1
     x = 0
     for postre in texto_comida:
-        if postre.get() != 0:
+        if postre.get() != '0':
             texto_recibo.insert(END, f'{lista_postres[x]}\t\t{postre.get()}\t'
                                      f'$ {int(postre.get())* precios_postres[x]}\n')
         x += 1
@@ -131,7 +131,7 @@ def guardar():
     archivo = filedialog.asksaveasfile(mode='w', defaultextension='.txt')
     archivo.write(info_recibo)
     archivo.close()
-    messagebox.showinfo('Información: Su recibo ha sido guardado en un archivo .txt')
+    messagebox.showinfo('Información:','Su recibo ha sido guardado en un archivo .txt')
 
 def resetear():
     texto_recibo.delete(0.1,END)
