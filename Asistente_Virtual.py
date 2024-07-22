@@ -181,3 +181,4 @@ def pedir_cosas():
         elif "adiós" in pedido:
             hablar("Me voy a descansar, cualquier cosa me avisas")
 pedir_cosas()
+
